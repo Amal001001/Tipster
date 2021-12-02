@@ -115,16 +115,16 @@ class ViewController: UIViewController {
         groupMembersLabel.text = "Group Size: \(groupMembers)"
         let groupMembersDouble = Double(groupMembers)
         
-        tip1Amount = userAmountDouble * Double(tip1Percent) / 100
-        tip2Amount = userAmountDouble * Double(tip2Percent) / 100
-        tip3Amount = userAmountDouble * Double(tip3Percent) / 100
+        tip1Amount = round(userAmountDouble * Double(tip1Percent) / 100 * 100) / 100.0
+        tip2Amount = round(userAmountDouble * Double(tip2Percent) / 100 * 100) / 100.0
+        tip3Amount = round(userAmountDouble * Double(tip3Percent) / 100 * 100) / 100.0
         tip1AmountLabel.text = "\(tip1Amount/groupMembersDouble)"
         tip2AmountLabel.text = "\(tip2Amount/groupMembersDouble)"
         tip3AmountLabel.text = "\(tip3Amount/groupMembersDouble)"
 
-        tipAndAmount1 = (userAmountDouble + tip1Amount)/groupMembersDouble
-        tipAndAmount2 = (userAmountDouble + tip2Amount)/groupMembersDouble
-        tipAndAmount3 = (userAmountDouble + tip3Amount)/groupMembersDouble
+        tipAndAmount1 = round((userAmountDouble + tip1Amount)/groupMembersDouble * 100) / 100.0
+        tipAndAmount2 = round((userAmountDouble + tip2Amount)/groupMembersDouble * 100) / 100.0
+        tipAndAmount3 = round((userAmountDouble + tip3Amount)/groupMembersDouble * 100) / 100.0
         tipAndAmount1Label.text = "\(tipAndAmount1)"
         tipAndAmount2Label.text = "\(tipAndAmount2)"
         tipAndAmount3Label.text = "\(tipAndAmount3)"
